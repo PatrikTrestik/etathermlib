@@ -1,11 +1,12 @@
 from setuptools import setup, find_packages
+import distutils.command.clean
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
     name="etathermlib-PatrikTrestik",
-    version="0.0.1",
+    version="1.2.3",
     author="Patrik Trestik",
     author_email="patrikt@volny.cz",
     description="Etatherm heating regulation TCP interface library",

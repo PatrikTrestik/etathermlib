@@ -1,16 +1,28 @@
+'''Simple example'''
 import asyncio
 import etathermlib.etatherm as etatherm
 
-def TestEtatherm():
+async def TestEtatherm():
     service=etatherm.Etatherm('192.168.15.35', 50001)
 
-    params=asyncio.run(service.getParameters())
-    print('Names', params)
+    # params=await service.getParameters()
+    # print('Params', params)
 
-    temps=asyncio.run(service.getCurrentTemperatures())
-    print('Temps', temps)
+    # temps=await service.getCurrentTemperatures()
+    # print('Temps', temps)
 
-    req=asyncio.run(service.getRequiredTemperatures())
+    req=await service.get_required_temperatures()
     print('Req  ', req)
+
+    # req=await service.setMode(2,True)
+    # print('Req ', req)
+
+    # req=await service.setMode(2,False)
+    # print('Req ', req)
+    req=await service.set_temporary_temperature(2, 21, 30)
+    print('Req  ', req)
+
+    # req=await service.getRequiredTemperatures()
+    # print('Req  ', req)
     
-TestEtatherm()
+asyncio.run(TestEtatherm())
