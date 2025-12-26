@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="etathermlib-PatrikTrestik",
-    version="1.2.3",
+    version="1.3.1",
     author="Patrik Trestik",
     author_email="patrikt@volny.cz",
     description="Etatherm heating regulation TCP interface library",
